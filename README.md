@@ -1,4 +1,4 @@
-# JR ATOS PIDS Resource Pack
+# JR Scripts Resource Pack
 
 这是一个 Minecraft Java Edition 资源包的基础骨架，目标版本为 **1.20.1**。
 
