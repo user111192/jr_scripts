@@ -8,13 +8,9 @@
 2. 把 ZIP 放入 Minecraft 的 `resourcepacks` 文件夹。
 3. 在游戏的“选项 → 资源包”中启用它。
 
-## 添加资源
+## Credit
 
-将资源放入 `assets/minecraft/` 下，并使用与原版资源相同的路径。例如：
+本项目部分资源衍生自：
 
-- 物品纹理：`assets/minecraft/textures/item/`
-- 方块纹理：`assets/minecraft/textures/block/`
-- 语言文件：`assets/minecraft/lang/`
-- 模型文件：`assets/minecraft/models/`
-
-`pack.mcmeta` 中的 `pack_format` 为 15；如果要支持其他 Minecraft 版本，请按对应版本更新该数值。
+- [MTR4] JR Kyushu 305 Series | JR九州305系 [Modrinth](https://modrinth.com/resourcepack/mtr4-jr-kyushu-305-series-jr305) Author: NonPlayerCharacter License: MIT License
+- 仙全铁LCD模版 [GitHub](https://github.com/TranSifona/JavaScript-Tutorial-for-MTR-mod) Author: TranSifona License: MIT License
