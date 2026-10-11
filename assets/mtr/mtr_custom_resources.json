@@ -1,0 +1,242 @@
+{
+    "vehicles": [
+        {
+            "id": "jr_kyushu_305_series_cab_forwards_lcd",
+            "name": "JR Kyushu 305 Series Cab Forwards (LCD)",
+            "scriptId": "jr_kyushu_305_series_lcd",
+            "color": "CC0000",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/305_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_kyushu_305_v2.bbmodel",
+                    "textureResource": "mtr:jr_kyushu_305_v2.png",
+                    "modelPropertiesResource": "mtr:properties_288b5de.json",
+                    "positionDefinitionsResource": "mtr:definition_ed558601.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": false,
+            "hasGangway2": true,
+            "hasBarrier1": true,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c1141a",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_kyushu_305_series_trailer_lcd",
+            "name": "JR Kyushu 305 Series Trailer (LCD)",
+            "scriptId": "jr_kyushu_305_series_lcd",
+            "color": "CC0000",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/305_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_kyushu_305_v2.bbmodel",
+                    "textureResource": "mtr:jr_kyushu_305_v2.png",
+                    "modelPropertiesResource": "mtr:properties_b766717b.json",
+                    "positionDefinitionsResource": "mtr:definition_fa5812ec.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c1141a",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_kyushu_305_series_pantograph_trailer_lcd",
+            "name": "JR Kyushu 305 Series Pantograph Trailer (LCD)",
+            "scriptId": "jr_kyushu_305_series_lcd",
+            "color": "CC0000",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/305_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_kyushu_305_v2.bbmodel",
+                    "textureResource": "mtr:jr_kyushu_305_v2.png",
+                    "modelPropertiesResource": "mtr:properties_a9887c63.json",
+                    "positionDefinitionsResource": "mtr:definition_f36ab20.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c1141a",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_kyushu_305_series_cab_backwards_lcd",
+            "name": "JR Kyushu 305 Series Cab Backwards (LCD)",
+            "scriptId": "jr_kyushu_305_series_lcd",
+            "color": "CC0000",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/305_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_kyushu_305_v2.bbmodel",
+                    "textureResource": "mtr:jr_kyushu_305_v2.png",
+                    "modelPropertiesResource": "mtr:properties_7589626f.json",
+                    "positionDefinitionsResource": "mtr:definition_7a57e626.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": false,
+            "hasBarrier1": false,
+            "hasBarrier2": true,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c1141a",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        }
+    ],
+    "vehicleScripts": [
+        {
+            "id": "jr_kyushu_305_series_lcd",
+            "prependExpressions": [
+                ""
+            ],
+            "scriptLocations": [
+                "mtr:jr_kyushu_305_v2.train_vision.config.js",
+                "jsblock:scripts/train_vision/main.js"
+            ],
+            "input": {},
+            "dataFetchMode": "ALL"
+        }
+    ],
+    "signs": [],
+    "rails": [],
+    "objects": [],
+    "lifts": []
+}
