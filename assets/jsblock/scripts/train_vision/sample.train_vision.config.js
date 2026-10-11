@@ -1,5 +1,7 @@
 // DisplayHelper 屏幕安装配置；在 main.js 前加载。
 var infoPanelConfig = {
+    // fontScale 为字体倍率；减少每页站数可以给大字留出空间。
+    layout: {fontScale: 1.45, localStations: 5, fullMapStationsPerPage: 10, transferColumnsPerPage: 2},
     "version": 1,
     "texSize": [
         1920,

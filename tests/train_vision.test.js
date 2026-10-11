@@ -88,6 +88,19 @@ stops[1].connectingInterchanges = map({ '连接站|Link Station': list([{ name: 
 d = c.BuildLCDData(state, train);
 assert.equal(d.transfers.length, 8);
 assert.equal(d.transfers[7].station.num, '09');
+// 配置代码必须传递到换乘图标；连接站名称在地图上随语言轮播。
+c.LCD_LINES['京滨东北线|Keihin-Tohoku Line'] = {code: 'JK', style: '{}'};
+const jkStop = {...stops[1], routeInterchanges: list([]), connectingInterchanges: map({
+    '连接站|Link Station': list([{name:'京滨东北线|Keihin-Tohoku Line||extra', color:0x5ca5d0}])
+})};
+const jkTransfer = c.LCDTransfers(jkStop)[0];
+assert.equal(jkTransfer.line.code, 'JK');
+assert.equal(c.LCDTransferLine({...jkTransfer, line:{}}).code, 'JK');
+assert.equal(c.LCDTransferLabel(jkTransfer), '京滨东北线 [连接站]');
+tick = 1;
+assert.equal(c.LCDTransferLabel(jkTransfer), 'Keihin-Tohoku Line [Link Station]');
+tick = 0;
+assert.equal(c.LCDTransferLabel({...jkTransfer, stationName:''}), '京滨东北线');
 assert.equal(c.LCDSelectPage(state, d, 'info-panel-l', { side: 'none' }, 0), 'platform'); // approaching
 assert.equal(c.LCDSelectPage(state, d, 'info-panel-l', { side: 'none' }, 6), 'doors');
 progress = 600;
@@ -155,11 +168,26 @@ const panelScope={};
 vm.runInNewContext(fs.readFileSync('assets/mtr/jr_kyushu_305_v2.train_vision.config.js','utf8'),panelScope);
 const panelConfig=json(panelScope.infoPanelConfig);
 for (const slot of panelConfig.slots) {
-    const [top,bottom,other]=slot.pos[0];
-    const distance=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
-    assert.ok(Math.abs(distance(bottom,other)/distance(top,bottom)-4)<0.0001);
-    assert.ok(Math.abs(Math.atan2(Math.abs(top[0]-bottom[0]),top[1]-bottom[1])*180/Math.PI-15)<0.001);
-    assert.strictEqual(slot.texArea[2]/slot.texArea[3],4);
+    assert.strictEqual(slot.pos.length, 2);
+    for (const quad of slot.pos) {
+        const [top,bottom,other]=quad;
+        const distance=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
+        assert.ok(Math.abs(distance(bottom,other)/distance(top,bottom)-23/13)<0.0001);
+        assert.ok(Math.abs(Math.atan2(Math.abs(top[0]-bottom[0]),top[1]-bottom[1])*180/Math.PI-15)<0.001);
+        assert.ok(top[1]<37/16, 'LCD must stay below the interior ceiling');
+        // 去除绘制偏移，反算原面坐标，确认落在纹理中的黑屏区域。
+        const times=quad.map(p=>(p[1]*16-32)/Math.cos(Math.PI/12));
+        assert.ok(Math.abs(times[0]-4.25)<0.0001);
+        assert.ok(Math.abs(times[1]-1)<0.0001);
+        const sign=slot.name==='info-panel-l'?1:-1;
+        const down=bottom.map((v,i)=>v-top[i]);
+        const across=other.map((v,i)=>v-bottom[i]);
+        const normalX=down[1]*across[2]-down[2]*across[1];
+        assert.ok(normalX*sign<0, 'LCD winding must face the cabin');
+        const us=quad.map(p=>548-sign*p[2]*16);
+        assert.ok(us.every(u=>(u>=542.5-0.0001&&u<=548.25+0.0001)||(u>=551-0.0001&&u<=556.75+0.0001)));
+    }
+    assert.ok(Math.abs(slot.texArea[2]/slot.texArea[3]-23/13)<0.0001);
 }
 const registration=JSON.parse(fs.readFileSync('assets/mtr/mtr_custom_resources.json','utf8'));
 for (const vehicle of registration.vehicles) {
@@ -171,3 +199,38 @@ for (const vehicle of registration.vehicles) {
     assert.deepStrictEqual(panelConfig.slots[0].offsets.map(p=>p[2]).sort((a,b)=>a-b),definition.positions.map(p=>p.z/16).sort((a,b)=>a-b));
 }
 console.log('PASS: 305 screen aspect, slope and door positions for all four vehicle variants');
+
+// Regression: JCM copies A's final Stop (destination "2") into B's first Stop.
+const aRoute=route(100,'A','普通|Local'), bRoute=route(200,'B','普通|Local');
+const one=stop(11,'1',100,aRoute,'2'), two=stop(22,'2',1000,aRoute,'2');
+const copied=stop(22,'2',1000,bRoute,'2'), back=stop(11,'1',2000,bRoute,'1');
+aRoute.getPlatforms=()=>list([{getDestination:()=> '2'},{getDestination:()=> '2'}]);
+let bDestination='1';
+bRoute.getPlatforms=()=>list([{getDestination:()=>bDestination},{getDestination:()=>bDestination}]);
+one.customDestination='';two.customDestination='';copied.customDestination='';back.customDestination='';
+stops=[one,two];upcoming=[copied,back];nextIndex=0;progress=100;speed=0;
+let roundTrip=c.BuildLCDData({routeTypes:{}},train);
+assert.equal(roundTrip.through,false);
+assert.deepEqual(json(roundTrip.stops.map(s=>s.station.getName())),['1','2']);
+assert.equal(roundTrip.destination,'2');
+assert.equal(c.LCDDestination(copied,upcoming),'1');
+// Same bug can also be represented by roundUpRoute on the shared junction.
+const junction={...two,isRouteSwitchoverStop:true,roundUpRoute:copied};
+upcoming=[junction,back];
+assert.equal(c.BuildLCDData({routeTypes:{}},train).through,false);
+// A genuine same-destination continuation must still connect.
+bDestination='2';
+roundTrip=c.BuildLCDData({routeTypes:{}},train);
+assert.equal(roundTrip.through,true);
+assert.equal(roundTrip.stops.length,3);
+assert.equal(c.LCDMapMarker({nextIndex:1,hasArrived:false},0),'dot');
+assert.equal(c.LCDMapMarker({nextIndex:1,hasArrived:false},1),'minutes');
+assert.equal(c.LCDMapMarker({nextIndex:1,hasArrived:true},1),'dot');
+assert.equal(c.LCDMapMarker({nextIndex:1,hasArrived:true},2),'minutes');
+c.LCD_CONFIG.showTravelMinutes=false;
+assert.equal(c.LCDMapMarker({nextIndex:1,hasArrived:false},2),'dot');
+c.LCD_CONFIG.showTravelMinutes=true;
+c.infoPanelConfig={layout:{fontScale:1.45,localStations:5,fullMapStationsPerPage:10,transferColumnsPerPage:2}};
+assert.equal(c.LCDLayout(1920,1080).fontScale,1.45);
+assert.deepEqual(json(c.LCDPagePlan({transfers:Array(11).fill({}),stops:Array(11).fill(one)})),['local','transfer:0','transfer:1','platform','full:0','full:1']);
+console.log('PASS: copied junction destinations, A→B round trip, true through service, exclusive markers and vehicle font/page configuration');

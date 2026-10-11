@@ -19,12 +19,15 @@ function LCDText(g, text, x, y, size, width, align, color) {
     text = String(text == null ? "" : text);
     if (!text.length) return;
     g.setFont(LCD_FONT.deriveFont(0, size));
-    g.setColor(color || LCD_PALETTE.ink);
     let measured = g.getFontMetrics().stringWidth(text);
+    if (width > 0 && measured > width) {
+        size *= width / measured;
+        g.setFont(LCD_FONT.deriveFont(0, size));
+        measured = g.getFontMetrics().stringWidth(text);
+    }
+    g.setColor(color || LCD_PALETTE.ink);
     let transform = g.getTransform();
-    let scale = width > 0 && measured > width ? width / measured : 1;
     g.translate(x, y);
-    g.scale(scale, 1);
     let offset = align === "center" ? -measured / 2 : align === "right" ? -measured : 0;
     g.drawString(text, offset, 0);
     g.setTransform(transform);
@@ -86,7 +89,7 @@ function LCDStationLabel(g, name, x, y, width, height, size, cjk, color) {
         let chars = Array.from(name);
         let step = Math.min(size * 1.16, height / Math.max(1, chars.length));
         chars.forEach(function (ch, i) {
-            LCDText(g, ch, x, y + size + i * step, Math.min(size, step), width, "center", color);
+            LCDText(g, ch, x, y + Math.min(size, step) + i * step, Math.min(size, step), width, "center", color);
         });
     } else {
         // 英文整串旋转，不逐个竖排字母。
@@ -96,4 +99,25 @@ function LCDStationLabel(g, name, x, y, width, height, size, cjk, color) {
         LCDText(g, name, 0, 0, size, height, "left", color);
         g.setTransform(transform);
     }
+}
+
+// 小屏局部图横排站名，长名字最多两行，避免英文旋转后被缩成细字。
+function LCDStationHorizontal(g, name, x, y, width, height, size, color) {
+    let chars = Array.from(name), lines;
+    size = Math.min(size, height * 0.85);
+    for (let attempt = 0; attempt < 20; attempt++) {
+        g.setFont(LCD_FONT.deriveFont(0, size));
+        let metrics = g.getFontMetrics();
+        lines = [""];
+        chars.forEach(function(ch) {
+            let index = lines.length - 1;
+            if (lines[index].length && metrics.stringWidth(lines[index] + ch) > width) lines.push(ch);
+            else lines[index] += ch;
+        });
+        if (lines.length <= 2 && lines.length * size * 1.12 <= height) break;
+        size *= 0.9;
+    }
+    lines.forEach(function(line, i) {
+        LCDText(g, line.trim(), x, y + size + i * size * 1.12, size, width, "center", color);
+    });
 }

@@ -47,6 +47,12 @@ function LCDStationConfig(routeName, stationName) {
     return value != null && typeof value === "object" && !Array.isArray(value) ? value : {};
 }
 
+// 绘制换乘时以 lines.json 为准，不依赖传入数据是否已经附带线路配置。
+function LCDTransferLine(route) {
+    let name = LCDName(route.name);
+    return Object.prototype.hasOwnProperty.call(LCD_LINES, name) ? LCDLine(name) : (route.line || {});
+}
+
 function LCDRouteId(route) {
     return route == null ? "" : String(route.getId());
 }
@@ -60,11 +66,37 @@ function LCDStopReady(stop) {
 }
 
 function LCDDestination(stop, routeStops) {
-    // destinationName 已包含 MTR 对先前自定义目的地的传播和默认终点规则。
+    // 优先读取路线自身 getPlatforms() 的有效目的地，绕过共享站 Stop 的旧路线复制值。
     if (stop == null) return "";
+    if (stop.route != null && typeof stop.route.getPlatforms === "function") {
+        let platforms = LCDArray(stop.route.getPlatforms());
+        let index = routeStops.indexOf(stop);
+        if (index < 0) {
+            for (let i = 0; i < routeStops.length; i++) {
+                if (LCDSameStop(routeStops[i], stop)) { index = i; break; }
+            }
+        }
+        if (index >= 0 && platforms[index] != null && typeof platforms[index].getDestination === "function") {
+            let authoritative = LCDName(platforms[index].getDestination());
+            if (authoritative.length) return authoritative;
+        }
+    }
     let destination = LCDName(stop.destinationName);
     if (destination.length) return destination;
     return routeStops.length ? LCDName(LCDStopName(routeStops[routeStops.length - 1])) : "";
+}
+
+// JCM 会把上一条路线的末站 Stop 复制为下一条路线首站，destinationName 可能仍属上一线。
+// SimplifiedRoutePlatform 的 destination 则来自该路线自身的 MTR getDestination(index)。
+function LCDNextRouteDestination(first, routeStops) {
+    if (first.route != null && typeof first.route.getPlatforms === "function") {
+        let platforms = LCDArray(first.route.getPlatforms());
+        if (platforms.length && typeof platforms[0].getDestination === "function") {
+            let destination = LCDName(platforms[0].getDestination());
+            return destination || LCDName(LCDStopName(routeStops[routeStops.length - 1]));
+        }
+    }
+    return LCDDestination(first, routeStops);
 }
 
 function LCDSameStop(a, b) {
@@ -180,7 +212,7 @@ function BuildLCDData(state, train) {
         let first = upcoming[0];
         // 交接站使用下一路线的 roundUpRoute 信息，不能比较同一个旧路线 Stop。
         if (first.isRouteSwitchoverStop && first.roundUpRoute != null) first = first.roundUpRoute;
-        let a = LCDDestination(last, stops), b = LCDDestination(first, upcoming);
+        let a = LCDDestination(last, stops), b = LCDNextRouteDestination(first, upcoming);
         data.through = a.length > 0 && a === b;
         if (data.through) {
             data.throughRoute = first.route;
@@ -223,10 +255,10 @@ function LCDDoorState(data, train, carIndex) {
 
 function LCDPagePlan(data) {
     let pages = ["local"];
-    let count = Math.ceil(data.transfers.length / (5 * LCD_CONFIG.transferColumnsPerPage));
+    let count = Math.ceil(data.transfers.length / (5 * LCDDisplayOptions().transferColumnsPerPage));
     for (let i = 0; i < count; i++) pages.push("transfer:" + i);
     pages.push("platform");
-    let maps = Math.max(1, Math.ceil(data.stops.length / LCD_CONFIG.fullMapStationsPerPage));
+    let maps = Math.max(1, Math.ceil(data.stops.length / LCDDisplayOptions().fullMapStationsPerPage));
     for (let i = 0; i < maps; i++) pages.push("full:" + i);
     return pages;
 }

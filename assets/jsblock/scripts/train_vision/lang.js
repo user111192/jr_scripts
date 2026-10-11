@@ -43,3 +43,7 @@ function LCDName(name) {
 function LCDCycle(name) {
     return String(TextUtil.cycleString(LCDName(name)));
 }
+
+function LCDTransferLabel(route) {
+    return LCDCycle(route.name) + (route.stationName ? " [" + LCDCycle(route.stationName) + "]" : "");
+}
