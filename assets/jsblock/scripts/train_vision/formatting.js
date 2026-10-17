@@ -55,11 +55,61 @@ function LCDBadgeStyle(line) {
     return style != null && typeof style === "object" ? style : {};
 }
 
+// idr 只能在脚本解析阶段调用；提前缓存图片及读取失败结果。
+var LCD_BADGE_IMAGES = LoadLCDBadgeImages();
+function LoadLCDBadgeImages() {
+    let images = Object.create(null);
+    Object.keys(LCD_LINES).forEach(function(key) {
+        let line = LCD_LINES[key];
+        if (line == null || typeof line !== "object") return;
+        let shape = String(LCDBadgeStyle(line).shape || "");
+        if (shape.indexOf("custom:") !== 0 || Object.prototype.hasOwnProperty.call(images, shape)) return;
+        images[shape] = null;
+        let path = shape.substring(7);
+        if (!path.length || path.charAt(0) === "/" || /[\\:]/.test(path) || path.split("/").some(function(part) {return part === "..";})) {
+            print("[Train Vision] Invalid custom badge path: " + path);
+            return;
+        }
+        try {
+            let id = Resources.idr("resources/" + path);
+            let image = Resources.exist(id) ? Resources.readBufferedImage(id) : null;
+            if (image != null && image.getWidth() > 0 && image.getHeight() > 0) images[shape] = image;
+            else print("[Train Vision] Custom badge unavailable: " + path);
+        } catch (error) {
+            print("[Train Vision] Custom badge " + path + ": " + error);
+        }
+    });
+    return images;
+}
+
+function LCDCustomBadge(g, x, y, size, image, number) {
+    let numbered = number != null && String(number).length > 0;
+    let height = size * (numbered ? 0.62 : 1);
+    let scale = Math.min(size / image.getWidth(), height / image.getHeight());
+    let width = image.getWidth() * scale, imageHeight = image.getHeight() * scale;
+    let centerY = numbered ? y - size * 0.19 : y;
+    let graphics = g.create();
+    try {
+        graphics.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+        let transform = new AffineTransform();
+        transform.translate(x - width / 2, centerY - imageHeight / 2);
+        transform.scale(scale, scale);
+        graphics.drawImage(image, transform, null);
+        if (numbered) LCDText(graphics, number, x, y + size * 0.43, size * 0.28, size * 0.8, "center", LCD_PALETTE.ink);
+    } finally { graphics.dispose(); }
+}
+
 // 无线路代码的换乘图标始终是空心圆；站号只在 lines.json 配置后绘制。
 function LCDBadge(g, x, y, size, line, number, color, transfer) {
     line = line || {};
     let code = String(line.code || "");
-    let style = code.length ? LCDBadgeStyle(line) : {};
+    let configuredStyle = LCDBadgeStyle(line);
+    let customImage = LCD_BADGE_IMAGES[String(configuredStyle.shape || "")];
+    if (customImage != null) {
+        LCDCustomBadge(g, x, y, size, customImage, number);
+        return;
+    }
+    let style = code.length ? configuredStyle : {};
     let shape = style.shape || "circle";
     let filled = Boolean(style.filled) && !(transfer && !code.length);
     let stroke = new BasicStroke(Math.max(3, size * 0.06));

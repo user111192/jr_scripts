@@ -38,6 +38,7 @@
 ```
 
 - `style` 支持 JSON 字符串（含默认 `"{}"`）或对象；`shape` 支持 `circle`、`square`、`rounded`、`diamond`、`jr`（方框字母），`filled` 控制填色。也可直接写形状名。未配置形状使用圆圈。
+- `shape: "custom:odakyu_hakone.png"` 使用 `train_vision/resources/odakyu_hakone.png` 的图片，支持子目录。图片等比居中、保留透明度，替代代码和几何形状，不要求非空 `code`；有站号时站号显示在图片下方。图片在加载阶段缓存；缺失或损坏时回退圆形。添加图片或修改配置后需重新加载。
 - 换乘线路配置非空 `code` 时，换乘指南与线路图的图标均显示该代码（例如 `JK`），形状按 `style` 绘制；未配置/没有 `code` 时使用空心圆，内部不显示字母。配置键需与 MTR 的完整多语言线路名称一致，例如 `"京浜東北線|Keihin-Tohoku Line": {"code":"JK","style":"{}"}`。
 - 连接车站换乘在线路图显示为 `线路名 [站名]`，两者跟随 MTR/JCM 语言轮播；换乘指南保留单独的连接站名称区域，配置了该线路该站的 `num` 时补充站号图标。线路色仍来自 MTR 数据。
 - `door` 的键为站台 `getName()` 返回的站台号，值为 `none|left|right|both`。左右按当前行进方向定义；`none` 表示未知，不能用来推断安全的开门侧。
