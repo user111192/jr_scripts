@@ -17,6 +17,7 @@ function DrawInfoPanel(graphics, state, data, carNumber, panelName, door, page, 
             LCDText(content, LCDLabel("platform_number", cjk, data.platformNumber), 960, 510, 60 * layout.options.fontScale, 1700, "center");
             LCDText(content, LCDLabel("coming_soon", cjk), 960, 700, 105 * layout.options.fontScale, 1740, "center", LCD_PALETTE.muted);
             DrawLCDConsist(content, data, carNumber, panelName, color, layout.options.fontScale);
+            DrawLCDPlatformTransfers(content, data, cjk, layout.options.fontScale);
         } else DrawLCDDoors(content, data, panelName, door, cjk, layout.options.fontScale);
         content.dispose();
     } else DrawLCDMap(g, data, page, panelName, cjk, layout);
@@ -24,6 +25,25 @@ function DrawInfoPanel(graphics, state, data, carNumber, panelName, door, page, 
         LCDText(g, LCDLabel("doors_unknown", cjk), 960, layout.h - 18 * layout.fontScale, 25 * layout.fontScale, 1250, "center", LCD_PALETTE.muted);
     }
     g.dispose();
+}
+
+function DrawLCDPlatformTransfers(g, data, cjk, fontScale) {
+    let routes = data.transfers || [];
+    LCDRect(g, 45, 965, 1830, 3, LCD_PALETTE.soft);
+    LCDText(g, LCDLabel("transfer", cjk), 55, 1040, 34 * fontScale, 230, "left", LCD_PALETTE.muted);
+    if (!routes.length) {
+        LCDText(g, "—", 325, 1040, 34 * fontScale, 1500, "left", LCD_PALETTE.muted);
+        return;
+    }
+    let shown = routes.slice(0, 4), cellWidth = 1500 / shown.length;
+    shown.forEach(function(route, index) {
+        let x = 315 + index * cellWidth, color = LCDColor(route.color);
+        let badgeSize = Math.min(42 * fontScale, cellWidth * 0.18);
+        LCDBadge(g, x + badgeSize / 2, 1024, badgeSize, LCDTransferLine(route), null, color, true);
+        let label = LCDTransferLabel(route);
+        if (index === shown.length - 1 && routes.length > shown.length) label += " +" + (routes.length - shown.length);
+        LCDText(g, label, x + badgeSize + 14, 1034, Math.min(30 * fontScale, cellWidth * 0.15), cellWidth - badgeSize - 22, "left");
+    });
 }
 
 function DrawLCDHeader(g, data, stationText, carNumber, cjk, color, layout) {

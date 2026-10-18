@@ -222,6 +222,22 @@ function BuildLCDData(state, train) {
             data.stops = stops.concat(upcoming.slice(start));
         }
     }
+    // At a station-front turnback, JCM exposes the next route as roundUpRoute
+    // on the shared stop. Keep the arriving route until the train has arrived.
+    if (data.hasArrived && data.stop.isRouteSwitchoverStop && data.stop.roundUpRoute != null) {
+        let nextRouteStop = data.stop.roundUpRoute;
+        if (LCDStopReady(nextRouteStop)) {
+            data.stop = nextRouteStop;
+            data.route = nextRouteStop.route;
+            data.routeName = String(data.route.getName());
+            data.routeColor = Number(data.route.getColor());
+            data.type = LCDRouteType(state, data.route, [nextRouteStop]);
+            data.destination = LCDNextRouteDestination(nextRouteStop, [nextRouteStop]);
+            data.stationConfig = LCDStationConfig(data.routeName, data.stationName);
+            data.line = LCDLine(data.routeName);
+            data.transfers = LCDTransfers(nextRouteStop);
+        }
+    }
     data.terminating = !data.through && data.hasArrived && data.nextIndex >= stops.length - 1;
     if (data.nextIndex >= stops.length && !data.docked) data.depot = true;
     data.ready = true;
