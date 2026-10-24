@@ -13,4 +13,5 @@
 本项目部分资源衍生自：
 
 - [MTR4] JR Kyushu 305 Series | JR九州305系 [Modrinth](https://modrinth.com/resourcepack/mtr4-jr-kyushu-305-series-jr305) Author: NonPlayerCharacter License: MIT License
+- [MTR4] [MTR4] JR East E233 series | JR東日本E233系 [Modrinth](https://modrinth.com/resourcepack/mtr4-jr-east-e233-series-jre233) Author: NonPlayerCharacter License: MIT License
 - 仙全铁LCD模版 [GitHub](https://github.com/TranSifona/JavaScript-Tutorial-for-MTR-mod) Author: TranSifona License: MIT License

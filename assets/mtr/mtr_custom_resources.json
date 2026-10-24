@@ -219,6 +219,1546 @@
             "legacyConstantPlaybackSpeed": false,
             "legacyDoorSoundBaseResource": "sp1900",
             "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-0_series_cab_forwards_lcd",
+            "name": "JR East E233-0 Series Cab Forwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "F67F43",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_0.png",
+                    "modelPropertiesResource": "mtr:properties_1a0b0495.json",
+                    "positionDefinitionsResource": "mtr:definition_58649075.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": false,
+            "hasGangway2": true,
+            "hasBarrier1": true,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-0_series_trailer_lcd",
+            "name": "JR East E233-0 Series Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "F67F43",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_0.png",
+                    "modelPropertiesResource": "mtr:properties_d6daa84f.json",
+                    "positionDefinitionsResource": "mtr:definition_f4e04b8e.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-0_series_pantograph_trailer_lcd",
+            "name": "JR East E233-0 Series Pantograph Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "F67F43",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_0.png",
+                    "modelPropertiesResource": "mtr:properties_1ddf75eb.json",
+                    "positionDefinitionsResource": "mtr:definition_ee1a62c2.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-0_series_cab_backwards_lcd",
+            "name": "JR East E233-0 Series Cab Backwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "F67F43",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_0.png",
+                    "modelPropertiesResource": "mtr:properties_57336240.json",
+                    "positionDefinitionsResource": "mtr:definition_61e3ddf6.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": false,
+            "hasBarrier1": false,
+            "hasBarrier2": true,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-1000_series_cab_forwards_lcd",
+            "name": "JR East E233-1000 Series Cab Forwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "00B2E5",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_1000.png",
+                    "modelPropertiesResource": "mtr:properties_afc2776f.json",
+                    "positionDefinitionsResource": "mtr:definition_515c08c8.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": false,
+            "hasGangway2": true,
+            "hasBarrier1": true,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-1000_series_trailer_lcd",
+            "name": "JR East E233-1000 Series Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "00B2E5",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_1000.png",
+                    "modelPropertiesResource": "mtr:properties_3e1a7d57.json",
+                    "positionDefinitionsResource": "mtr:definition_29b9a643.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-1000_series_pantograph_trailer_lcd",
+            "name": "JR East E233-1000 Series Pantograph Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "00B2E5",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_1000.png",
+                    "modelPropertiesResource": "mtr:properties_44319e8.json",
+                    "positionDefinitionsResource": "mtr:definition_f2731391.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-1000_series_cab_backwards_lcd",
+            "name": "JR East E233-1000 Series Cab Backwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "00B2E5",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_1000.png",
+                    "modelPropertiesResource": "mtr:properties_bd5aec89.json",
+                    "positionDefinitionsResource": "mtr:definition_c0f7d1e1.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": false,
+            "hasBarrier1": false,
+            "hasBarrier2": true,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-3000_series_cab_forwards_lcd",
+            "name": "JR East E233-3000 Series Cab Forwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "22AA33",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_3000.png",
+                    "modelPropertiesResource": "mtr:properties_6da66b2e.json",
+                    "positionDefinitionsResource": "mtr:definition_824119f1.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": false,
+            "hasGangway2": true,
+            "hasBarrier1": true,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-3000_series_trailer_lcd",
+            "name": "JR East E233-3000 Series Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "22AA33",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_3000.png",
+                    "modelPropertiesResource": "mtr:properties_8a384706.json",
+                    "positionDefinitionsResource": "mtr:definition_2ce9c209.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-3000_series_pantograph_trailer_lcd",
+            "name": "JR East E233-3000 Series Pantograph Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "22AA33",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_3000.png",
+                    "modelPropertiesResource": "mtr:properties_ebca17f4.json",
+                    "positionDefinitionsResource": "mtr:definition_db25e77f.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-3000_series_cab_backwards_lcd",
+            "name": "JR East E233-3000 Series Cab Backwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "22AA33",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_3000.png",
+                    "modelPropertiesResource": "mtr:properties_b02ea41b.json",
+                    "positionDefinitionsResource": "mtr:definition_91e5dbf2.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": false,
+            "hasBarrier1": false,
+            "hasBarrier2": true,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-5000_series_cab_forwards_lcd",
+            "name": "JR East E233-5000 Series Cab Forwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "AA1830",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_5000.png",
+                    "modelPropertiesResource": "mtr:properties_71992b42.json",
+                    "positionDefinitionsResource": "mtr:definition_a3b79fea.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": false,
+            "hasGangway2": true,
+            "hasBarrier1": true,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-5000_series_trailer_lcd",
+            "name": "JR East E233-5000 Series Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "AA1830",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_5000.png",
+                    "modelPropertiesResource": "mtr:properties_fe87009.json",
+                    "positionDefinitionsResource": "mtr:definition_b4029f22.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-5000_series_pantograph_trailer_lcd",
+            "name": "JR East E233-5000 Series Pantograph Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "AA1830",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_5000.png",
+                    "modelPropertiesResource": "mtr:properties_1a3e1913.json",
+                    "positionDefinitionsResource": "mtr:definition_64110289.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-5000_series_cab_backwards_lcd",
+            "name": "JR East E233-5000 Series Cab Backwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "AA1830",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_5000.png",
+                    "modelPropertiesResource": "mtr:properties_6d2d640b.json",
+                    "positionDefinitionsResource": "mtr:definition_3246f435.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": false,
+            "hasBarrier1": false,
+            "hasBarrier2": true,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-6000_series_cab_forwards_lcd",
+            "name": "JR East E233-6000 Series Cab Forwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "7FC342",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_6000.png",
+                    "modelPropertiesResource": "mtr:properties_41fe140d.json",
+                    "positionDefinitionsResource": "mtr:definition_b8c6fa09.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": false,
+            "hasGangway2": true,
+            "hasBarrier1": true,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-6000_series_trailer_lcd",
+            "name": "JR East E233-6000 Series Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "7FC342",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_6000.png",
+                    "modelPropertiesResource": "mtr:properties_d9968a71.json",
+                    "positionDefinitionsResource": "mtr:definition_f7e568a0.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-6000_series_pantograph_trailer_lcd",
+            "name": "JR East E233-6000 Series Pantograph Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "7FC342",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_6000.png",
+                    "modelPropertiesResource": "mtr:properties_2ecdbd6f.json",
+                    "positionDefinitionsResource": "mtr:definition_df206dc7.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-6000_series_cab_backwards_lcd",
+            "name": "JR East E233-6000 Series Cab Backwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "7FC342",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_6000.png",
+                    "modelPropertiesResource": "mtr:properties_340db715.json",
+                    "positionDefinitionsResource": "mtr:definition_234f9e29.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": false,
+            "hasBarrier1": false,
+            "hasBarrier2": true,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-7000_series_cab_forwards_lcd",
+            "name": "JR East E233-7000 Series Cab Forwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "2E8B57",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_7000.png",
+                    "modelPropertiesResource": "mtr:properties_70a08be0.json",
+                    "positionDefinitionsResource": "mtr:definition_4623c9ed.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": false,
+            "hasGangway2": true,
+            "hasBarrier1": true,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-7000_series_trailer_lcd",
+            "name": "JR East E233-7000 Series Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "2E8B57",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_7000.png",
+                    "modelPropertiesResource": "mtr:properties_a53f2ee8.json",
+                    "positionDefinitionsResource": "mtr:definition_e408cd59.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-7000_series_pantograph_trailer_lcd",
+            "name": "JR East E233-7000 Series Pantograph Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "2E8B57",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_7000.png",
+                    "modelPropertiesResource": "mtr:properties_a4608697.json",
+                    "positionDefinitionsResource": "mtr:definition_534ebe07.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-7000_series_cab_backwards_lcd",
+            "name": "JR East E233-7000 Series Cab Backwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "2E8B57",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_7000.png",
+                    "modelPropertiesResource": "mtr:properties_5fa61819.json",
+                    "positionDefinitionsResource": "mtr:definition_20370cdf.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": false,
+            "hasBarrier1": false,
+            "hasBarrier2": true,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-8000_series_cab_forwards_lcd",
+            "name": "JR East E233-8000 Series Cab Forwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "FFD400",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_8000.png",
+                    "modelPropertiesResource": "mtr:properties_55f75ad8.json",
+                    "positionDefinitionsResource": "mtr:definition_15933527.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": false,
+            "hasGangway2": true,
+            "hasBarrier1": true,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-8000_series_trailer_lcd",
+            "name": "JR East E233-8000 Series Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "FFD400",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_8000.png",
+                    "modelPropertiesResource": "mtr:properties_4fc7031e.json",
+                    "positionDefinitionsResource": "mtr:definition_e397aafb.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-8000_series_pantograph_trailer_lcd",
+            "name": "JR East E233-8000 Series Pantograph Trailer (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "FFD400",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_8000.png",
+                    "modelPropertiesResource": "mtr:properties_2ff25dca.json",
+                    "positionDefinitionsResource": "mtr:definition_dc836361.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": true,
+            "hasBarrier1": false,
+            "hasBarrier2": false,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
+        },
+        {
+            "id": "jr_east_e233-8000_series_cab_backwards_lcd",
+            "name": "JR East E233-8000 Series Cab Backwards (LCD)",
+            "scriptId": "jr_east_e233_series_lcd",
+            "color": "FFD400",
+            "transportMode": "TRAIN",
+            "length": 20.0,
+            "width": 2.0,
+            "bogie1Position": -6.5,
+            "bogie2Position": 6.5,
+            "couplingPadding1": 0.0,
+            "couplingPadding2": 0.0,
+            "description": "",
+            "wikipediaArticle": "https://en.wikipedia.org/wiki/E233_series",
+            "tags": [],
+            "models": [
+                {
+                    "modelResource": "mtr:jr_east_e233.bbmodel",
+                    "textureResource": "mtr:jr_east_e233_8000.png",
+                    "modelPropertiesResource": "mtr:properties_ab1ad853.json",
+                    "positionDefinitionsResource": "mtr:definition_5b3af6f3.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie1Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "bogie2Models": [
+                {
+                    "modelResource": "mtr:models/vehicle/bogie_1.bbmodel",
+                    "textureResource": "mtr:textures/vehicle/bogie_1.png",
+                    "modelPropertiesResource": "mtr:properties/vehicle/bogie_1.json",
+                    "positionDefinitionsResource": "mtr:properties/definition/origin.json",
+                    "flipTextureV": true
+                }
+            ],
+            "hasGangway1": true,
+            "hasGangway2": false,
+            "hasBarrier1": false,
+            "hasBarrier2": true,
+            "legacyRiderOffset": 0.0,
+            "bveSoundBaseResource": "",
+            "legacySpeedSoundBaseResource": "c_train",
+            "legacySpeedSoundCount": 96,
+            "legacyUseAccelerationSoundsWhenCoasting": false,
+            "legacyConstantPlaybackSpeed": false,
+            "legacyDoorSoundBaseResource": "sp1900",
+            "legacyDoorCloseSoundTime": 0.5
         }
     ],
     "vehicleScripts": [
@@ -229,6 +1769,18 @@
             ],
             "scriptLocations": [
                 "mtr:jr_kyushu_305_v2.train_vision.config.js",
+                "jsblock:scripts/train_vision/main.js"
+            ],
+            "input": {},
+            "dataFetchMode": "ALL"
+        },
+        {
+            "id": "jr_east_e233_series_lcd",
+            "prependExpressions": [
+                ""
+            ],
+            "scriptLocations": [
+                "mtr:jr_east_e233.train_vision.config.js",
                 "jsblock:scripts/train_vision/main.js"
             ],
             "input": {},
