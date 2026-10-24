@@ -36,7 +36,7 @@ function DrawLCDPlatformTransfers(g, data, cjk, fontScale) {
         return;
     }
     let shown = routes.slice(0, 4), cellWidth = 1500 / shown.length;
-    shown.forEach(function(route, index) {
+    shown.forEach(function (route, index) {
         let x = 315 + index * cellWidth, color = LCDColor(route.color);
         let badgeSize = Math.min(42 * fontScale, cellWidth * 0.18);
         LCDBadge(g, x + badgeSize / 2, 1024, badgeSize, LCDTransferLine(route), null, color, true);
@@ -161,11 +161,11 @@ function DrawLCDTransfers(g, data, pageIndex, cjk, layout) {
     DrawLCDSection(g, LCDLabel("transfer", cjk), layout);
     let max = layout.options.transferColumnsPerPage * 5;
     // 连接车站优先放在上方，排序副本不改变 MTR 原始换乘数组。
-    let ordered = data.transfers.filter(function(r) { return Boolean(r.stationName); })
-        .concat(data.transfers.filter(function(r) { return !r.stationName; }));
+    let ordered = data.transfers.filter(function (r) { return Boolean(r.stationName); })
+        .concat(data.transfers.filter(function (r) { return !r.stationName; }));
     let routes = ordered.slice(pageIndex * max, (pageIndex + 1) * max);
     let cells = LCDTransferCells(routes.length), available = layout.bodyHeight - 55 * layout.fontScale;
-    routes.forEach(function(route, i) {
+    routes.forEach(function (route, i) {
         let cell = cells[i], width = 1800 / cell.columns, rowHeight = available / cell.rows;
         let x = cell.centered ? 960 - width / 2 : 60 + cell.column * width;
         let y = layout.bodyTop + cell.row * rowHeight;
@@ -201,7 +201,8 @@ function DrawLCDConsist(g, data, carNumber, panelName, color, fontScale) {
     let width = Math.min(140, 1600 / Math.max(1, data.carCount));
     let start = 960 - width * data.carCount / 2;
     for (let i = 0; i < data.carCount; i++) {
-        let number = right ? data.carCount - i : i + 1;
+        // 编组编号沿屏幕方向固定递增；折返只影响行进箭头，不反转车厢顺序。
+        let number = (LCD_CONFIG.panelSides[panelName] === "left") ? data.carCount - i : i + 1;
         let x = start + i * width;
         LCDRect(g, x + 4, 864, width - 8, 87, number === carNumber ? color : LCD_PALETTE.soft, 10);
         LCDText(g, number, x + width / 2, 925, Math.min(58, 43 * fontScale, width * 0.55), width - 15, "center",
