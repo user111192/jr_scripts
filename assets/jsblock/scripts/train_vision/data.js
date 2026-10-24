@@ -34,9 +34,26 @@ function LCDMapEntries(map) {
     return result;
 }
 
+function LCDSplitLineName(value) {
+    let name = String(value == null ? "" : value), separator = name.indexOf("||");
+    return separator < 0 ? {primary: name, secondary: ""} : {
+        primary: name.substring(0, separator), secondary: name.substring(separator + 2)
+    };
+}
+
+function LCDLineConfigKey(routeName) {
+    let actual = LCDSplitLineName(routeName), keys = Object.keys(LCD_LINES);
+    for (let i = 0; i < keys.length; i++) {
+        let key = keys[i];
+        if (key === "type_colors") continue;
+        let configured = LCDSplitLineName(key);
+        if (configured.primary === actual.primary && actual.secondary.indexOf(configured.secondary) === 0) return key;
+    }
+    return null;
+}
+
 function LCDLine(routeName) {
-    let name = LCDName(routeName);
-    let value = Object.prototype.hasOwnProperty.call(LCD_LINES, name) ? LCD_LINES[name] : null;
+    let key = LCDLineConfigKey(routeName), value = key == null ? null : LCD_LINES[key];
     return value != null && typeof value === "object" && !Array.isArray(value) ? value : {};
 }
 
@@ -49,8 +66,8 @@ function LCDStationConfig(routeName, stationName) {
 
 // 绘制换乘时以 lines.json 为准，不依赖传入数据是否已经附带线路配置。
 function LCDTransferLine(route) {
-    let name = LCDName(route.name);
-    return Object.prototype.hasOwnProperty.call(LCD_LINES, name) ? LCDLine(name) : (route.line || {});
+    let key = LCDLineConfigKey(route.name);
+    return key != null ? LCDLine(route.name) : (route.line || {});
 }
 
 function LCDRouteId(route) {
@@ -108,7 +125,7 @@ function LCDTransfers(stop) {
     let result = [], seen = {};
     if (!LCDStopReady(stop)) return result;
     function add(route, stationName) {
-        let name = LCDName(route.name);
+        let name = String(route.name);
         // MTR 可能返回同色同名线路的重复方向，去重但保留异名连接站。
         let key = name + "\n" + stationName;
         if (seen[key]) return;
