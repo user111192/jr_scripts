@@ -17,10 +17,28 @@ include("info-panel.js");
 
 // 左右屏使用不同的纹理区域；同一侧重复安装的屏幕共用内容。
 // DisplayHelper 模型坐标中 +X 是左侧，+Z 是后方。
-// 车辆前置配置直接定义 infoPanelConfig；未提供时使用示例 JS 配置。
+// 每节车厢按 VehicleWrapper.getVehicleId 精确选择 LCD 几何；未匹配时沿用 slot 通用位置。
 if (typeof infoPanelConfig === "undefined") include("sample.train_vision.config.js");
-var panelList = infoPanelConfig.slots.map(function(slot) { return slot.name; });
-var infoPanelGenerator = new DisplayHelper(infoPanelConfig);
+
+function LCDResolveVehiclePanelConfig(vehicleId) {
+    let base = infoPanelConfig;
+    let variants = base.lcdPositions || {};
+    let id = String(vehicleId == null ? "" : vehicleId);
+    let exact = Object.prototype.hasOwnProperty.call(variants, id) ? variants[id] : null;
+    let profileKey = exact ? id : "default";
+    let resolved = {version: base.version, texSize: base.texSize, slots: []};
+
+    base.slots.forEach(function(slot) {
+        let copy = {};
+        Object.keys(slot).forEach(function(key) { copy[key] = slot[key]; });
+        let specific = exact && exact[slot.name] ? exact[slot.name] : {};
+        ["pos", "offsets"].forEach(function(key) {
+            if (Object.prototype.hasOwnProperty.call(specific, key)) copy[key] = specific[key];
+        });
+        resolved.slots.push(copy);
+    });
+    return {key: profileKey, config: resolved};
+}
 
 function create(ctx, state, train) {
     // mtr_custom_resources.json 中此 script 的 dataFetchMode 必须是 ALL。
@@ -29,8 +47,22 @@ function create(ctx, state, train) {
     state.pageKey = null;
     state.pageStarted = Timing.elapsed();
     state.infoPanels = {};
+    state.infoPanelGenerators = {};
     for (let carIndex of ctx.getMyCars()) {
-        state.infoPanels[carIndex] = infoPanelGenerator.create();
+        let vehicleId = null;
+        try {
+            if (typeof train.getVehicleId === "function") vehicleId = train.getVehicleId(carIndex);
+        } catch (error) { print("[Train Vision] Cannot read vehicle id for car " + carIndex + ": " + error); }
+        let profile = LCDResolveVehiclePanelConfig(vehicleId);
+        if (state.infoPanelGenerators[profile.key] == null) {
+            state.infoPanelGenerators[profile.key] = new DisplayHelper(profile.config);
+        }
+        let display = state.infoPanelGenerators[profile.key].create();
+        state.infoPanels[carIndex] = {
+            display: display,
+            config: profile.config,
+            panelList: profile.config.slots.map(function(slot) { return slot.name; })
+        };
     }
 }
 
@@ -39,11 +71,12 @@ function render(ctx, state, train) {
         let data = BuildLCDData(state, train);
         let now = Timing.elapsed();
         for (let carIndex of ctx.getMyCars()) {
-            let infoPanel = state.infoPanels[carIndex];
+            let carPanel = state.infoPanels[carIndex];
+            let infoPanel = carPanel.display;
             let door = LCDDoorState(data, train, carIndex);
-            for (let panelName of panelList) {
+            for (let panelName of carPanel.panelList) {
                 let g = infoPanel.graphicsFor(panelName).create();
-                let slot = infoPanelConfig.slots.filter(function(s) { return s.name === panelName; })[0];
+                let slot = carPanel.config.slots.filter(function(s) { return s.name === panelName; })[0];
                 g.setClip(0, 0, slot.texArea[2], slot.texArea[3]);
                 g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 let page = LCDSelectPage(state, data, panelName, door, now);
@@ -57,10 +90,10 @@ function render(ctx, state, train) {
     // 模型每帧绘制，纹理只在刷新时上传。
     for (let carIndex of ctx.getMyCars()) {
         let manager = ctx.getCarRenderManager(carIndex);
-        if (manager != null) manager.drawModel(state.infoPanels[carIndex].model, null);
+        if (manager != null) manager.drawModel(state.infoPanels[carIndex].display.model, null);
     }
 }
 
 function dispose(ctx, state, train) {
-    for (let carIndex in state.infoPanels) state.infoPanels[carIndex].close();
+    for (let carIndex in state.infoPanels) state.infoPanels[carIndex].display.close();
 }
