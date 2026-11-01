@@ -72,6 +72,9 @@ function render(ctx, state, train) {
         let now = Timing.elapsed();
         for (let carIndex of ctx.getMyCars()) {
             let carPanel = state.infoPanels[carIndex];
+            // Vehicle composition can change while this script instance is alive.
+            // create() only builds panels for cars present at initialization.
+            if (carPanel == null || carPanel.display == null) continue;
             let infoPanel = carPanel.display;
             let door = LCDDoorState(data, train, carIndex);
             for (let panelName of carPanel.panelList) {
@@ -90,7 +93,8 @@ function render(ctx, state, train) {
     // 模型每帧绘制，纹理只在刷新时上传。
     for (let carIndex of ctx.getMyCars()) {
         let manager = ctx.getCarRenderManager(carIndex);
-        if (manager != null) manager.drawModel(state.infoPanels[carIndex].display.model, null);
+        let carPanel = state.infoPanels[carIndex];
+        if (manager != null && carPanel != null && carPanel.display != null) manager.drawModel(carPanel.display.model, null);
     }
 }
 
