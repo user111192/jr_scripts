@@ -48,7 +48,16 @@ function create(ctx, state, train) {
     state.pageStarted = Timing.elapsed();
     state.infoPanels = {};
     state.infoPanelGenerators = {};
+    LCDSyncCarPanels(ctx, state, train);
+}
+
+// Car indexes may not be populated yet when create() runs, and can change
+// during consist updates. Keep DisplayHelper instances aligned with live cars.
+function LCDSyncCarPanels(ctx, state, train) {
+    let activeCars = {};
     for (let carIndex of ctx.getMyCars()) {
+        activeCars[carIndex] = true;
+        if (state.infoPanels[carIndex] != null) continue;
         let vehicleId = null;
         try {
             if (typeof train.getVehicleId === "function") vehicleId = train.getVehicleId(carIndex);
@@ -64,9 +73,16 @@ function create(ctx, state, train) {
             panelList: profile.config.slots.map(function(slot) { return slot.name; })
         };
     }
+    for (let carIndex in state.infoPanels) {
+        if (!activeCars[carIndex]) {
+            state.infoPanels[carIndex].display.close();
+            delete state.infoPanels[carIndex];
+        }
+    }
 }
 
 function render(ctx, state, train) {
+    LCDSyncCarPanels(ctx, state, train);
     if (state.refreshRate.shouldUpdate()) {
         let data = BuildLCDData(state, train);
         let now = Timing.elapsed();
