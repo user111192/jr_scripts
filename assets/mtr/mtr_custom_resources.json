@@ -1768,8 +1768,7 @@
                 ""
             ],
             "scriptLocations": [
-                "mtr:jr_kyushu_305_v2.train_vision.config.js",
-                "jsblock:scripts/train_vision/main.js"
+                "mtr:jr_kyushu_305_v2.train_vision.main.js"
             ],
             "input": {},
             "dataFetchMode": "ALL"
@@ -1780,8 +1779,7 @@
                 ""
             ],
             "scriptLocations": [
-                "mtr:jr_east_e233.train_vision.config.js",
-                "jsblock:scripts/train_vision/main.js"
+                "mtr:jr_east_e233.train_vision.main.js"
             ],
             "input": {},
             "dataFetchMode": "ALL"

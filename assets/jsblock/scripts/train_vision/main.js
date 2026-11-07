@@ -7,7 +7,6 @@
 // https://modrinth.com/resourcepack/mtr-mod-m-train-with-infopanels
 
 // Train Vision：模型安装位置、车辆生命周期与数据/绘图的连接。
-include(Resources.id("mtrsteamloco:scripts/display_helper.js"));
 include("config.js");
 include("lang.js");
 include("data.js");
@@ -47,7 +46,6 @@ function create(ctx, state, train) {
     state.pageKey = null;
     state.pageStarted = Timing.elapsed();
     state.infoPanels = {};
-    state.infoPanelGenerators = {};
     LCDSyncCarPanels(ctx, state, train);
 }
 
@@ -62,10 +60,10 @@ function LCDSyncCarPanels(ctx, state, train) {
             if (typeof train.getVehicleId === "function") vehicleId = train.getVehicleId(carIndex);
         } catch (error) { print("[Train Vision] Cannot read vehicle id for car " + carIndex + ": " + error); }
         let profile = LCDResolveVehiclePanelConfig(vehicleId);
-        if (state.infoPanelGenerators[profile.key] == null) {
-            state.infoPanelGenerators[profile.key] = new DisplayHelper(profile.config);
-        }
-        let display = state.infoPanelGenerators[profile.key].create();
+        let generators = typeof infoPanelGenerators === "undefined" ? {} : infoPanelGenerators;
+        let generator = generators[profile.key] || generators.default;
+        if (generator == null) continue;
+        let display = generator.create();
         state.infoPanels[carIndex] = {
             display: display,
             config: profile.config,

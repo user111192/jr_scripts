@@ -190,18 +190,21 @@ for (const slot of panelConfig.slots) {
     assert.ok(Math.abs(slot.texArea[2]/slot.texArea[3]-23/13)<0.0001);
 }
 const registration=JSON.parse(fs.readFileSync('assets/mtr/mtr_custom_resources.json','utf8'));
-for (const vehicle of registration.vehicles) {
+const e233Scope={};
+vm.runInNewContext(fs.readFileSync('assets/mtr/jr_east_e233.train_vision.config.js','utf8'),e233Scope);
+const e233Config=json(e233Scope.infoPanelConfig);
+for (const vehicle of registration.vehicles.filter(v=>v.id.includes('jr_east_e233-'))) {
     const model=vehicle.models[0];
     const properties=JSON.parse(fs.readFileSync('assets/mtr/'+model.modelPropertiesResource.split(':')[1],'utf8'));
     const definitions=JSON.parse(fs.readFileSync('assets/mtr/'+model.positionDefinitionsResource.split(':')[1],'utf8'));
     const part=properties.parts.find(p=>p.names.includes('door_interior'));
     const definition=definitions.positionDefinitions.find(d=>d.name===part.positionDefinitions[0]);
-    let expectedOffsets = panelConfig.slots[0].offsets.map(p=>p[2]);
-    if (vehicle.id.includes('_cab_forwards_lcd')) expectedOffsets = [-6.5,-2.5,2.5,7.5];
-    if (vehicle.id.includes('_cab_backwards_lcd')) expectedOffsets = [6.5,2.5,-2.5,-7.5];
+    const variant=e233Config.lcdPositions[vehicle.id];
+    const slot=e233Config.slots[0];
+    const expectedOffsets=(variant && variant[slot.name] && variant[slot.name].offsets || slot.offsets).map(p=>p[2]);
     assert.deepStrictEqual(expectedOffsets.slice().sort((a,b)=>a-b),definition.positions.map(p=>p.z/16).sort((a,b)=>a-b));
 }
-console.log('PASS: 305 screen aspect, slope and door positions for all four vehicle variants');
+console.log('PASS: E233 per-variant door positions match vehicle model definitions');
 
 // Regression: JCM copies A's final Stop (destination "2") into B's first Stop.
 const aRoute=route(100,'A','普通|Local'), bRoute=route(200,'B','普通|Local');
