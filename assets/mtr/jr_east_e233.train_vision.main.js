@@ -19,9 +19,17 @@ function LCDResolveVehiclePanelConfig(vehicleId) {
 }
 var infoPanelGenerators = {};
 var e233VariantIds = Object.keys(infoPanelConfig.lcdPositions || {});
+var e233Profiles = {};
 for (var i = 0; i < e233VariantIds.length; i++) {
     var id = e233VariantIds[i];
-    infoPanelGenerators[id] = new DisplayHelper(LCDResolveVehiclePanelConfig(id).config);
+    var profile = LCDResolveVehiclePanelConfig(id);
+    var geometryKey = profile.config.slots.map(function (slot) {
+        return JSON.stringify({pos: slot.pos, offsets: slot.offsets});
+    }).join("|");
+    if (e233Profiles[geometryKey] == null) {
+        e233Profiles[geometryKey] = new DisplayHelper(profile.config);
+    }
+    infoPanelGenerators[id] = e233Profiles[geometryKey];
 }
 infoPanelGenerators.default = new DisplayHelper(infoPanelConfig);
 include(Resources.id("jsblock:scripts/train_vision/main.js"));
