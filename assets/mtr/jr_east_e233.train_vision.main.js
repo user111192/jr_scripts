@@ -1,5 +1,5 @@
 include(Resources.id("mtrsteamloco:scripts/display_helper.js"));
-include("jr_east_e233.train_vision.config.js");
+include(Resources.id("mtr:jr_east_e233.train_vision.config.js"));
 function LCDResolveVehiclePanelConfig(vehicleId) {
     var base = infoPanelConfig;
     var variants = base.lcdPositions || {};
