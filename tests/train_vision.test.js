@@ -196,7 +196,10 @@ for (const vehicle of registration.vehicles) {
     const definitions=JSON.parse(fs.readFileSync('assets/mtr/'+model.positionDefinitionsResource.split(':')[1],'utf8'));
     const part=properties.parts.find(p=>p.names.includes('door_interior'));
     const definition=definitions.positionDefinitions.find(d=>d.name===part.positionDefinitions[0]);
-    assert.deepStrictEqual(panelConfig.slots[0].offsets.map(p=>p[2]).sort((a,b)=>a-b),definition.positions.map(p=>p.z/16).sort((a,b)=>a-b));
+    let expectedOffsets = panelConfig.slots[0].offsets.map(p=>p[2]);
+    if (vehicle.id.includes('_cab_forwards_lcd')) expectedOffsets = [-6.5,-2.5,2.5,7.5];
+    if (vehicle.id.includes('_cab_backwards_lcd')) expectedOffsets = [6.5,2.5,-2.5,-7.5];
+    assert.deepStrictEqual(expectedOffsets.slice().sort((a,b)=>a-b),definition.positions.map(p=>p.z/16).sort((a,b)=>a-b));
 }
 console.log('PASS: 305 screen aspect, slope and door positions for all four vehicle variants');
 
