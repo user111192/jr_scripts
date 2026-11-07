@@ -5,17 +5,17 @@ function LCDResolveVehiclePanelConfig(vehicleId) {
     var variants = base.lcdPositions || {};
     var id = String(vehicleId == null ? "" : vehicleId);
     var exact = Object.prototype.hasOwnProperty.call(variants, id) ? variants[id] : null;
-    var resolved = {version: base.version, texSize: base.texSize, slots: []};
-    base.slots.forEach(function(slot) {
+    var resolved = { version: base.version, texSize: base.texSize, slots: [] };
+    base.slots.forEach(function (slot) {
         var copy = {};
-        Object.keys(slot).forEach(function(key) { copy[key] = slot[key]; });
+        Object.keys(slot).forEach(function (key) { copy[key] = slot[key]; });
         var specific = exact && exact[slot.name] ? exact[slot.name] : {};
-        ["pos", "offsets"].forEach(function(key) {
+        ["pos", "offsets"].forEach(function (key) {
             if (Object.prototype.hasOwnProperty.call(specific, key)) copy[key] = specific[key];
         });
         resolved.slots.push(copy);
     });
-    return {key: exact ? id : "default", config: resolved};
+    return { key: exact ? id : "default", config: resolved };
 }
 var infoPanelGenerators = {};
 var e233VariantIds = Object.keys(infoPanelConfig.lcdPositions || {});
@@ -24,4 +24,4 @@ for (var i = 0; i < e233VariantIds.length; i++) {
     infoPanelGenerators[id] = new DisplayHelper(LCDResolveVehiclePanelConfig(id).config);
 }
 infoPanelGenerators.default = new DisplayHelper(infoPanelConfig);
-include("scripts/train_vision/main.js");
+include(Resources.id("jsblock:scripts/train_vision/main.js"));
